@@ -10,7 +10,7 @@ function onDeviceReady(){
 
 function startWatch(){
 	var options = (frequency: 1000);
-	watchID =navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+	watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
 }
 
 function stopWatch(){
@@ -25,7 +25,11 @@ function onSuccess(acceleration){
 	var accY = acceleration.y;
 	var accZ = acceleration.z;
 	var timestamp = acceleration.timestamp;
-	document.getElementById('accelerometer').innerHTML = 'Acceleration X: ' + accX + '<br/>' + 'Acceleration Y: ' + accY + '<br/>' + 'Acceleration Z: ' + accZ + '<br/>' + 'Timestamp: ' + timestamp + '<br/>';
+	document.getElementById('accelerometer').innerHTML =
+	'Acceleration X: ' + accX + '<br/>' +
+	'Acceleration Y: ' + accY + '<br/>' +
+	'Acceleration Z: ' + accZ + '<br/>' +
+	'Timestamp: ' + timestamp + '<br/>';
 }
 
 function onError(){
